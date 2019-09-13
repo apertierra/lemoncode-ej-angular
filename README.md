@@ -1,27 +1,37 @@
-# AngularExercise
+# Intro
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
+El objetivo de este ejercicio es el que te familiarizes con Angular.
 
-## Development server
+Tomaremos como punto de entrada una aplicación que muestra una lista de miembros
+que pertenece a la organización Lemoncode de Github (esto está harcodeado), añadiremos
+un _input_ que permite al usuario cambiar dicho nombre de grupo y elegir el que quiera,
+por ejemplo _quiero ver los miembros de la organización Microsoft_
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+# Ejercicio
 
-## Code scaffolding
+- Arranca con el proyecto que se encuentra en la carpeta *00_start*.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Instala las dependencias.
 
-## Build
+```bash
+npm install
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+- Arranca la aplicación y comprueba que funciona correctamente..
 
-## Running unit tests
+```bash
+npm start
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- La implementación actual muestra una lista de miembros que pertenecen a la organización 
+_lemoncode_, esta no esta mal, pero nos gustaría que el usuario pudiera teclear el nombre
+de organización que quisiera, y al pulsar el botón pudiera ver la lista de miembros de la
+organización que hubiera tecleado (ejemplo de organizacines validas: microsoft, facebook)
 
-## Running end-to-end tests
+- Pistas:
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+  - Create una nueva propiedad en MembersTableComponent y que por defecto valga _lemoncode_.
+  - Crea un input al lado del botón de carga, este botón mostrarar la orgainzación actual elegida (propiedad  creada en paso anterior).
+  - Enlaza la propiedad organización. Utiliza la directiva ngModel (two way binding) para tal fin.
+  - Cuando el usuario pulso en el botón de cargar, en vez de pasar el valor harcodeado _lemoncode_ que pase el 
+  valor de la propiedad.
