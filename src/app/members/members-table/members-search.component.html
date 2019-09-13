@@ -1,0 +1,9 @@
+<form class="form-inline mt-3 mb-3" #searchForm="ngForm" novalidate autocomplete="off" (ngSubmit)="findResults(searchForm.value)" >
+  <input type="text"
+    name="name"
+    (ngModel)="name"
+    class="form-control mr-2"
+    placeholder="Search members by organization"
+    required />
+  <button type="submit" class="btn btn-primary" [disabled]="!searchForm.valid" >Load</button>
+</form>

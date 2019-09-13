@@ -1,0 +1,19 @@
+<h2>Members Page</h2>
+
+<app-members-search (searchEvent)="loadMembers($event)" ></app-members-search>
+
+<div *ngIf="action">
+
+  <div *ngIf="isEmptyList" class="alert alert-info">
+    There arent members.
+  </div>
+
+  <table *ngIf="!isEmptyList" class="table table-bordered table-striped">
+    <thead app-member-head></thead>
+    <tbody>
+      <tr app-member-row [member]="member" *ngFor="let member of members">
+      </tr>
+    </tbody>
+  </table>
+
+</div>
